@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, minimun-scale=1, maximun-scale=1.2">
+ 	<title>Interpolacion App</title>
+    <link type="text/css" rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/UMGAPP.min.css"/>
+    <script src="js/jquery-1.9.1.min.js"></script> 
+	<script src="js/jquery.mobile-1.3.0.min.js"></script>         
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	
+    <!--Presente dado un futuro-->
+    <div data-role="page" id="P-F" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+        	<h1 style="text-align:center;">Presente dado un Futuro</h1>
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" class="ui-btn-active">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" data-transition="slideup">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" data-transition="slidedown">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" data-transition="slideup">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" data-transition="slidedown">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" data-transition="slideup">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+       		<form name="PF" style="text-align:center;" id="PF">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularPresente" id="calcularPresente"/>
+            </form> 	
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+    <!--Futuro dado un presente-->
+    <div data-role="page" id="F-P" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+       		<h1 style="text-align:center;">Futuro dado un Presente</h1>
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" data-transition="slidedown">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" class="ui-btn-active">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" data-transition="slideup">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" data-transition="slidedown">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" data-transition="slideup">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" data-transition="slidedown">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        	<form name="FP" style="text-align:center;" id="FP">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularFuturo" id="calcularFuturo"/>
+            </form> 	
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+    <!--Serie uniforme de pagos dado un presente-->
+    <div data-role="page" id="A-P" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+       		<h2 style="text-align:center;">Serie uniforme de pagos dado un Presente</h2>
+            <div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" data-transition="slideup">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" data-transition="slidedown">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" class="ui-btn-active">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" data-transition="slideup">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" data-transition="slidedown">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" data-transition="slideup">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        	<form name="AP" style="text-align:center;" id="AP">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularSeriePresente" id="calcularSeriePresente"/>
+            </form> 	
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+    <!--Presente dado una serie uniforme de pagos-->
+    <div data-role="page" id="P-A" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+        	<h1 style="text-align:center;">Presente dado una Serie Uniforme</h1>
+            <div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" data-transition="slidedown">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" data-transition="slideup">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" data-transition="slidedown">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" class="ui-btn-active">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" data-transition="slideup">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" data-transition="slidedown">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        	<form name="PA" style="text-align:center;" id="PA">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularPresenteSerie" id="calcularPresenteSerie"/>
+            </form> 	
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+    <!--Futuro dado una serie uniforme de pagos-->
+    <div data-role="page" id="F-A" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+        	<h1 style="text-align:center;">Futuro dado una Serie Uniforme</h1>
+            <div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" data-transition="slideup">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" data-transition="slidedown">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" data-transition="slideup">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" data-transition="slidedown">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" class="ui-btn-active">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" data-transition="slideup">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        	<form name="FA" style="text-align:center;" id="FA">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularFuturoSerie" id="calcularFuturoSerie"/>
+            </form> 	
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+        <!--Serie uniforme de pagos dado un futuro-->
+    <div data-role="page" id="A-F" data-theme="a">
+    	<div data-role="header" data-position="fixed">
+        	<h1 style="text-align:center;">Futuro dado una Serie Uniforme</h1>
+            <div data-role="navbar">
+            	<ul>
+                	<li><a href="#P-F" data-transition="slidedown">[P/F,i,n]</a></li>   
+                    <li><a href="#F-P" data-transition="slideup">[F/P,i,n]</a></li>
+                    <li><a href="#A-P" data-transition="slidedown">[A/P,i,n]</a></li>
+                    <li><a href="#P-A" data-transition="slideup">[P/A,i,n]</a></li>
+                    <li><a href="#F-A" data-transition="slidedown">[F/A,i,n]</a></li>
+                    <li><a href="#A-F" class="ui-btn-active">[A/F,i,n]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        	<form name="AF" style="text-align:center;" id="AF">
+            	<label>Periodo:</label><input type="text" name="n"/>
+                <label>Tasa:</label><input type="text" name="i"/>
+                <input type="button" value="Calcular" name="calcularSerieFuturo" id="calcularSerieFuturo"/>
+            </form> 	
+        </div>
+       	<div data-role="footer" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<div>
+                	<a data-role="button" data-inline="true" data-icon="info" 
+                     href="#Pop" data-mini="true" data-transition="pop">Acerca de...</a>
+               	</div>
+            </div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c" style="text-align:right">
+            	Ingenieria Economica WebApp &nbsp;&nbsp;
+            	<br>Jose Carlos  Sosa Mejia &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    
+     <!--Pop Acerca de-->
+    <div data-role="page" id="Pop" data-theme="a">
+    	<div data-role="header" data-position="fixed" class="ui-grid-b">
+        	<div class="ui-block-a">
+            	<a data-role="button" data-icon="delete" href="#P-F" 
+                data-mini="true" data-transition="pop" data-direction="reverse" data-inline="true"
+                 style="border-radius:3px;">Cerrar.</a> 
+            </div>
+            <div class="ui-block-b" style="text-align:center; padding:1px; font-size:1.5em;">Acerca de...</div>
+            <div class="ui-block-c"></div>
+        </div>
+        <div data-role="content">
+        	<p>Jose Carlos Sosa Mejia</p><br>
+            <p><a href="http://gt.linkedin.com/in/jososa/"
+            style="color:white; text-decoration:none;" data-rel="external">Web Site</a></p> 
+        </div>
+       	<div data-role="footer" data-position="fixed" class="ui-grid-a">
+        	<div class="ui-block-a"></div>
+            <div class="ui-block-b" style="text-align:right;">
+            	<a href="http://www.google.com.gt"
+                style="color:white; text-decoration:none;">Codigo fuente en Github &nbsp;&nbsp;</a>
+          	</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+		$(document).ready(function()
+		{
+   			<!--Calcula el Factor Presente dado un valor futuro-->
+			$("#calcularPresente").click(function(event)
+			{
+     			alert(presenteDadoFuturo(parseFloat(document.PF.n.value), parseFloat(document.PF.i.value)));
+     			event.preventDefault();
+   			});
+			
+			<!--Calcula el Factor Futuro dado un Valor Presente-->
+			$("#calcularFuturo").click(function(event)
+			{
+     			alert(futuroDadoPresente(parseFloat(document.FP.n.value), parseFloat(document.FP.i.value)));
+     			event.preventDefault();
+   			});
+			
+			<!--Calcula el Factor Serie Uniforme de pagos dado un Valor Presente-->
+			$("#calcularSeriePresente").click(function(event)
+			{
+     			alert(serieDadoPresente(parseFloat(document.AP.n.value), parseFloat(document.AP.i.value)));
+     			event.preventDefault();
+   			});
+			
+			<!--Calcula el Factor Presente dado una serie uniforme-->
+			$("#calcularPresenteSerie").click(function(event)
+			{
+     			alert(presenteDadoSerie(parseFloat(document.PA.n.value), parseFloat(document.PA.i.value)));
+     			event.preventDefault();
+   			});
+			
+			<!--Calcula el Factor futuro dado una serie uniforme-->
+			$("#calcularFuturoSerie").click(function(event)
+			{
+     			alert(futuroDadoSerie(parseFloat(document.FA.n.value), parseFloat(document.FA.i.value)));
+     			event.preventDefault();
+   			});
+			
+			<!--Calcula el Factor Serie uniforme dado un valor futuro-->
+			$("#calcularSerieFuturo").click(function(event)
+			{
+     			alert(serieDadoFuturo(parseFloat(document.AF.n.value), parseFloat(document.AF.i.value)));
+     			event.preventDefault();
+   			});
+			
+ 		});
+    </script>				
+</body>
+</html>
