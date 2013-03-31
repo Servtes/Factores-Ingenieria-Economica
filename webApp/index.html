@@ -6,9 +6,12 @@
  	<title>Interpolacion App</title>
     <link type="text/css" rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/UMGAPP.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/smoke.css"/>
+    <link id="theme" rel="stylesheet" href="css/themes/default.css" type="text/css" media="screen" />
     <script src="js/jquery-1.9.1.min.js"></script> 
 	<script src="js/jquery.mobile-1.3.0.min.js"></script>         
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/smoke.min.js"></script>
 </head>
 <body>
 	
@@ -264,42 +267,48 @@
    			<!--Calcula el Factor Presente dado un valor futuro-->
 			$("#calcularPresente").click(function(event)
 			{
-     			alert(presenteDadoFuturo(parseFloat(document.PF.n.value), parseFloat(document.PF.i.value)));
+     			smoke.alert("El factor obtenido es: " + presenteDadoFuturo(parseFloat(document.PF.n.value),
+				 parseFloat(document.PF.i.value)));
      			event.preventDefault();
-   			});
+			});
 			
 			<!--Calcula el Factor Futuro dado un Valor Presente-->
 			$("#calcularFuturo").click(function(event)
 			{
-     			alert(futuroDadoPresente(parseFloat(document.FP.n.value), parseFloat(document.FP.i.value)));
+     			smoke.alert("El factor obtenido es: " + futuroDadoPresente(parseFloat(document.FP.n.value), 
+				parseFloat(document.FP.i.value)));
      			event.preventDefault();
    			});
 			
 			<!--Calcula el Factor Serie Uniforme de pagos dado un Valor Presente-->
 			$("#calcularSeriePresente").click(function(event)
 			{
-     			alert(serieDadoPresente(parseFloat(document.AP.n.value), parseFloat(document.AP.i.value)));
+     			smoke.alert("El factor obtenido es: " + serieDadoPresente(parseFloat(document.AP.n.value), 
+				parseFloat(document.AP.i.value)));
      			event.preventDefault();
    			});
 			
 			<!--Calcula el Factor Presente dado una serie uniforme-->
 			$("#calcularPresenteSerie").click(function(event)
 			{
-     			alert(presenteDadoSerie(parseFloat(document.PA.n.value), parseFloat(document.PA.i.value)));
+     		smoke.alert("El factor obtenido es: " + presenteDadoSerie(parseFloat(document.PA.n.value), 
+			parseFloat(document.PA.i.value)));
      			event.preventDefault();
    			});
 			
 			<!--Calcula el Factor futuro dado una serie uniforme-->
 			$("#calcularFuturoSerie").click(function(event)
 			{
-     			alert(futuroDadoSerie(parseFloat(document.FA.n.value), parseFloat(document.FA.i.value)));
+     			smoke.alert("El factor obtenido es: " + futuroDadoSerie(parseFloat(document.FA.n.value), 
+				parseFloat(document.FA.i.value)));
      			event.preventDefault();
    			});
 			
 			<!--Calcula el Factor Serie uniforme dado un valor futuro-->
 			$("#calcularSerieFuturo").click(function(event)
 			{
-     			alert(serieDadoFuturo(parseFloat(document.AF.n.value), parseFloat(document.AF.i.value)));
+     			smoke.alert("El factor obtenido es: " + serieDadoFuturo(parseFloat(document.AF.n.value), 
+				parseFloat(document.AF.i.value)));
      			event.preventDefault();
    			});
 			
